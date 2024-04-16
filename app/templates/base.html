@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl City Project by Briana Griggs and Kariel Mosley</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% csrf_token %}
+    <nav><a href="{% url "home" %}">Home/Album List</a></nav>
+    {% block content %}
+        <ul>
+            {% for album in songDict %}
+                <li><a href="{% url "details" album %}">{{album}}</a></li>
+            {% endfor %}
+        </ul>
+    {% endblock content %}
+</head>
+<body>
