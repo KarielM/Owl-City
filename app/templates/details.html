@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for track, song in Album.items %}
-        <p>{{track}}: {{song}}</p>
-    {% endfor %}
+    <body class = '{{albumTitle}}'>
+        <div>
+            {% for track, song in Album.items %}
+            <p>{{track}}: {{song}}</p>
+        {% endfor %}
+        </div>
+    </body>
 {% endblock content %}
-

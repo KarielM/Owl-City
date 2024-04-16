@@ -8,5 +8,5 @@ from django.http.response import HttpResponse
 def create_home_view(request:HttpRequest) -> HttpResponse:
     return render (request, 'base.html', {'songDict': song_list})
 
-def create_details_view(request:HttpRequest, albumTitle) ->HttpResponse:
-    return render (request,'details.html', {'Album': song_list[albumTitle]})
+def create_details_view(request:HttpRequest, albumTitle: str) ->HttpResponse:
+    return render (request,'details.html', {'Album': song_list[albumTitle], 'albumTitle': albumTitle})

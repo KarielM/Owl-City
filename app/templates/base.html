@@ -7,13 +7,16 @@
     <title>Owl City Project by Briana Griggs and Kariel Mosley</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     {% csrf_token %}
-    <nav><a href="{% url "home" %}">Home/Album List</a></nav>
-    {% block content %}
-        <ul>
-            {% for album in songDict %}
-                <li><a href="{% url "details" album %}">{{album}}</a></li>
-            {% endfor %}
-        </ul>
-    {% endblock content %}
+    
 </head>
-<body>
+<nav><a href="{% url "home" %}">Home/Album List</a></nav>
+{% block content %}
+<body class = 'home'>
+    <ul>
+        {% for album in songDict %}
+            <li><a href="{% url "details" album %}">{{album}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock content %}
+</html>
